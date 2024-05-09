@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<robot name="SturdyBeneScope" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find SturdyBeneScope_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find SturdyBeneScope_description)/urdf/SturdyBeneScope.trans" />
+<xacro:include filename="$(find SturdyBeneScope_description)/urdf/SturdyBeneScope.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.0018104254287113642 0.03317885445551596 0.08960527430887044" rpy="0 0 0"/>
+    <mass value="1.738018350890001"/>
+    <inertia ixx="0.013786" iyy="0.010882" izz="0.022969" ixy="0.001416" iyz="-0.000451" ixz="0.00066"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find SturdyBeneScope_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find SturdyBeneScope_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+</robot>
